@@ -1,0 +1,17 @@
+import numpy as np
+import matplotlib.pyplot as mpt
+x=np.linspace(0,0.15,16)
+print(x)
+y1= 306 + ((31) * (np.cosh(9.27*(0.150-x)))/np.cosh(9.27*0.150))
+#rint(y1)
+y2=307 + ((273+82-307)*(np.cosh(9.797*(0.150-x)))/np.cosh(9.797*0.150))
+#print(y2)
+mpt.plot(x,y1,'r*-',label='For 60 volts ')
+mpt.plot(x,y2,'b+-',label='For 80 volts')
+mpt.xlim(0,0.15)
+mpt.xlabel('Distance from base in m ')
+mpt.ylabel('Temperature in K')
+mpt.title('Temperature Vs Distance from base')
+mpt.legend()
+mpt.grid(True)
+mpt.show()
